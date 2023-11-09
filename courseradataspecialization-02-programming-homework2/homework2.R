@@ -1,7 +1,11 @@
-hwzip <- "homework2_data.zip"
-download.file(
-  "https://d396qusza40orc.cloudfront.net/rprog%2Fdata%2Fspecdata.zip", 
-  destfile = hwzip)
+rm(list = ls())
+
+hwzip <- "courseradataspecialization-02-programming-homework2/homework2_data.zip"
+if(!file.exists(hwzip)){
+  download.file(
+    "https://d396qusza40orc.cloudfront.net/rprog%2Fdata%2Fspecdata.zip", 
+    destfile = hwzip)
+}
 unzip(hwzip)
 
 readpollutantfiles <- function(directory){
